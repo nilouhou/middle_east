@@ -1,6 +1,6 @@
 # middle_east
 **Middle East interactive map for showing Covid-19 cases and death**
-![Image description](link-to-image)
+![Dataviz example](https://github.com/nilouhou/middle_east/blob/master/middle_east_map.png)
 
 
 
