@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Covid-19 cases in Middle East</title>
+    <link rel="stylesheet" type="text/css" href="css/middle_east.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
+            charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
+    <script src="js/jquery.mapael.js" charset="utf-8"></script>
+    <script src="js/maps/france_departments.js" charset="utf-8"></script>
+    <script src="js/maps/world_countries.js" charset="utf-8"></script>
+    <script src="js/maps/middle_east.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".mapcontainer").mapael({
+                map: {
+                    name: "middle_east",
+                    defaultArea: {
+                        attrs: {
+                            stroke: "#fff",
+                            "stroke-width": 0.1
+                        }
+                    }
+                },
+                /* attrs will be applied to legend AND map elements whereas legendSpecificAttrs will onlybe applied to legend elements */
+                legend: {
+                    area: {
+                        title: "Covid-19 Cases in Middle East",
+                        slices: [
+                            {
+                                max: 1000,
+                                attrs: {
+                                    fill: "#d5e5ff"
+                                },
+                                legendSpecificAttrs: {
+                                    stroke: '#505050',
+                                    "stroke-width": 2,
+                                    width: 50,
+                                    height: 50
+                                },
+                                label: "Less than 1,000 confirmed cases"
+                            },
+                            {
+                                min: 1000,
+                                max: 10000,
+                                attrs: {
+                                    fill: "#87aade"
+                                },
+                                legendSpecificAttrs: {
+                                    stroke: '#505050',
+                                    "stroke-width": 2,
+                                    width: 50,
+                                    height: 50
+                                },
+                                label: "Between 1,000-10,000 confirmed cases"
+                            },
+                            {
+                                min: 10000,
+                                max: 50000,
+                                attrs: {
+                                    fill: "#3777c8"
+                                },
+                                legendSpecificAttrs: {
+                                    stroke: '#505050',
+                                    "stroke-width": 2,
+                                    width: 50,
+                                    height: 50
+                                },
+                                label: "Between 10,000-50,000 confirmed cases"
+                            },
+                            {
+                                min: 50000,
+                                attrs: {
+                                    fill: "#214478"
+                                },
+                                legendSpecificAttrs: {
+                                    stroke: '#505050',
+                                    "stroke-width": 2,
+                                    width: 50,
+                                    height: 50
+                                },
+                                label: "More than 50,000 confirmed cases"
+                            }
+                        ]
+                    }
+                },
+
+                areas: {
+                    "Yemen": {
+                        "value": "1",
+                        "attrs": {
+                            "href": "#"
+                        },
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Yemen<\/span><br \/>Cases : 1 <br \/> Death : 0"
+                        }
+                    },
+                    "Jordan": {
+                        "value": "413",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Jordan<\/span><br \/>Cases : 413 <br \/> Death : 7"
+                        }
+                    },
+                    "UAE": {
+                        "value": "6302",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">UAE<\/span><br \/>Cases : 6,302 <br \/> Death : 37"
+                        }
+                    },
+                    "Turkey": {
+                        "value": "82329",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Turkey<\/span><br \/>Cases : 82,329 <br \/> Death : 1,890"
+                        }
+                    },
+                    "Iraq": {
+                        "value": "1513",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Iraq<\/span><br \/>Cases : 1,513 <br \/> Death : 82"
+                        }
+                    },
+                    "Iran": {
+                        "value": "80868",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Iran<\/span><br \/>Cases : 80,868 <br \/> Death : 5,031"
+                        }
+                    },
+                    "Syria": {
+                        "value": "38",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Syria<\/span><br \/>Cases : 38 <br \/> Death : 2"
+                        }
+                    },
+                    "Oman": {
+                        "value": "1180",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Oman<\/span><br \/>Cases : 1,180 <br \/> Death : 6"
+                        }
+                    },
+                    "Egypt": {
+                        "value": "3032",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Egypt<\/span><br \/>Cases : 3,032 <br \/> Death : 224"
+                        }
+                    },
+                    "SArabia": {
+                        "value": "8274",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Sauidi Arabia<\/span><br \/>Cases : 8,274 <br \/> Death : 92"
+                        }
+                    },
+                    "Israel": {
+                        "value": "13265",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Israel<\/span><br \/>Cases : 13,265 <br \/> Death : 164"
+                        }
+                    },
+                    "Lebanon": {
+                        "value": "672",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Lebanon<\/span><br \/>Cases : 672 <br \/> Death : 21"
+                        }
+                    },
+                    "Kuwait": {
+                        "value": "1751",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Kuwait<\/span><br \/>Cases : 1,751 <br \/> Death : 6"
+                        }
+                    },
+                    "Qatar": {
+                        "value": "5008",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Qatar<\/span><br \/>Cases : 5,008 <br \/> Death : 8"
+                        }
+                    },
+                    "Cyprus": {
+                        "value": "761",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Cyprus<\/span><br \/>Cases : 761 <br \/> Death : 12"
+                        }
+                    },
+                    "Palestine": {
+                        "value": "313",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Palestine<\/span><br \/>Cases : 313 <br \/> Death : 2"
+                        }
+                    },
+                    "Bahrain": {
+                        "value": "1773",
+                        "href": "#",
+                        "tooltip": {
+                            "content": "<span style=\"font-weight:bold;\">Bahrain<\/span><br \/>Cases : 1,773 <br \/> Death : 7"
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+<div class="row mapcontainer">
+  <div class="column right">
+    <div class="map">
+        <span>Alternative content for the map</span>
+    </div>
+  </div>
+  <div class="column left">
+    <div class="areaLegend">
+        <span>Covid-19 cases in Middle East</span>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+</body>
+</html>
