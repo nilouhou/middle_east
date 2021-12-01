@@ -1,7 +1,7 @@
 # Middel East Interactive Map
-**Middle East interactive map for showing Covid-19 cases and death**
+**Middle East interactive map for showing Covid-19 cases and death [Demo Here](http://faratech.ca/middle_east/middle_east.html)**
 ![Dataviz example](https://github.com/nilouhou/middle_east/blob/master/middle_east_map.png)
-[Demo Here](http://faratech.ca/middle_east/middle_east.html)
+
 
 
 
